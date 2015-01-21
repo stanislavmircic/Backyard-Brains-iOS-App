@@ -573,7 +573,7 @@
         }
         
         
-        if(multichannel || self.mode == MultichannelGLViewModeView)
+        if(multichannel )//|| self.mode == MultichannelGLViewModeView)
         {
             //draw handle
             
@@ -1423,11 +1423,9 @@
     {
         [dataSourceDelegate endSelection];
         selectionEnabledAfterSecond = false;
-        //if[touchTimer ]
-        //if ([touchTimer isValid])
-        //{
-         [touchTimer invalidate];
-        //}
+
+        //reset measurement timer
+        [touchTimer invalidate];
         touchTimer = nil;
     }
     [super touchesBegan:touches withEvent:event];
@@ -1446,6 +1444,7 @@
         }
     }
    
+    //reset measurement timer
     [touchTimer invalidate];
     touchTimer = nil;
     
